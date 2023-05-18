@@ -32,7 +32,7 @@ let numOne = 0;
 let numTwo = 0;
 
 
-/* main object:*/
+/* game object:*/
 
 let diceGame = {
 
