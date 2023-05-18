@@ -31,6 +31,9 @@ window.onload = winneralert.innerText = 'dice on!';
 let numOne = 0;
 let numTwo = 0;
 
+
+/* main object:*/
+
 let diceGame = {
 
     diceAction(){
