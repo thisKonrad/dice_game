@@ -117,7 +117,7 @@ h1{ text-align: center;
 }
 
 
-/* >> below : the dices <<*/
+/* >> the dices <<*/
 .dice{ position: absolute;
     flex-basis: center;
     width: 12rem;
