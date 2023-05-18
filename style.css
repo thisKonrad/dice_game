@@ -1,0 +1,317 @@
+/* :::: dice_game stylesheet :::: */
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+
+:root{ color: white;
+    font-family: 'Lobster', cursive;
+}
+
+body{ width: 100%;
+    height: 100%;
+    max-width: 90rem;
+    margin: 1em auto;
+    background-image: linear-gradient(120deg, black 10%, rgb(112, 112, 112)20%,
+     black 30%, rgb(71, 71, 71)40%, black 50%, rgb(112, 112, 112)60%, black 70%,
+     rgb(71, 71, 71)80%, black 95%);
+     background-size: 120% 120%;
+     background-repeat: repeat;
+}
+
+.page_wrap{ display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* :: >> body text << :: */
+.player_Headline{ font-size: 2.5rem;}
+
+h1{ text-align: center;
+    text-shadow: 0.075em 0.25em rgba(0, 0, 0, 0.5);
+    font-size: 6em;
+}
+
+.header{ grid-area: 1/1/2/7;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.headlineArrow{font-size: 4rem; text-align: center;}
+.arrowSM{ color: rgba(255, 255, 255, 0.6);}
+
+.player_one_wrap{grid-area: 2/2/3/3;
+    margin-top: 8%;
+    text-align: center;
+}
+.player{ font-size: 3rem;
+    text-shadow: 0.5rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.player_two_wrap{ grid-area: 2/5/3/6;
+    margin-top: 8%;
+    text-align: center;
+}
+  
+#footer{ 
+    grid-area: 5/ 1/ 7/ 7;
+    text-align: center;
+    font-size: 1.5rem;
+    color:white;
+    padding: 0.45rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.who_wins{ grid-area: 2/ 3/ 3/ 5;
+    margin-top: 15%;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.button{ font-family: 'Lobster', cursive;
+    font-size: 180%;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    padding-bottom: 2%;
+    border: 0.05em solid white;
+    border-radius: 20%;
+    background-color: transparent;}
+.button:hover{ border: 0.05em solid rgba(255, 255, 255, 0.4); 
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);}
+    .button:active{ border: 0.05em solid rgba(255, 255, 255, 0.2); 
+        color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(0, 0, 0);}
+
+.score{font-size: 180%; margin-top: 8%;}
+.score_one{ text-align: center;}
+.score_two{ text-align: center;}
+.span_pts{ color: rgba(255, 255, 255, 0.6);}
+
+.reset-button{ grid-area: 4/ 3/ 5/ 5; margin: 0 10% 0 10%;}
+.dice-button{ grid-area: 3/ 3/ 4/ 5;  margin: 0 10% 0 10%;}
+
+
+/* :::: >> dice_stuff << :::: */
+.dice_container_One{ 
+    grid-area: 3/ 2/ 4/ 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+    flex-wrap: wrap;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 0 0 0;
+}
+
+.dice_container_Two{ 
+    grid-area: 3/ 5/ 4/ 6;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+    flex-wrap: wrap;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 0 0 7%;
+}
+
+
+/* >> below : the dices <<*/
+.dice{ position: absolute;
+    flex-basis: center;
+    width: 12rem;
+    height: 12rem;
+    padding: 15%;
+    background-color: aliceblue;
+    border: solid 0.025rem black;
+    border-radius: 1.5rem;
+    box-shadow: 0.05rem 0.8rem 1rem 0.2rem rgba(0, 0, 0, 0.25);
+}
+
+.dot{ border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.25rem;
+    background-color: black;
+}
+
+/* set a grid for the dice design */
+.diceGrid{ display: grid;
+    grid-column: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+}
+
+
+/* design the dice faces: */
+.dice_one_f1{ z-index: 0;}
+.dice_one_f1{ justify-content: center;}
+.dice_one_f1 :nth-child(1){ grid-area: 2 / 2 / 2 /2;}
+
+.dice_one_f2{ z-index: 0;}
+.dice_one_f2 .dot{margin-left: 20%;}
+.dice_one_f2 :nth-child(1){ grid-area: 1 / 1 / 1 ;}
+.dice_one_f2 :nth-child(2){ grid-area: 3 / 3 / 3 ;}
+
+.dice_one_f3{ z-index: 0;}
+.dice_one_f3{ justify-content: center;}
+.dice_one_f3 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f3 :nth-child(2){ grid-area: 2/ 2/ 3;}
+.dice_one_f3 :nth-child(3){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f4{ z-index: 0;}
+.dice_one_f4 .dot{ margin: 20%;}
+.dice_one_f4 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f4 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_one_f4 :nth-child(3){ grid-area: 3/ 1/ 3;}
+.dice_one_f4 :nth-child(4){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f5{ z-index: 0;}
+.dice_one_f5{ justify-content: center;}
+.dice_one_f5 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_one_f5 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_one_f5 :nth-child(3){ grid-area: 2/ 2/ 2;}
+.dice_one_f5 :nth-child(4){ grid-area: 3/ 1/ 3;}
+.dice_one_f5 :nth-child(5){ grid-area: 3/ 3/ 3;}
+
+.dice_one_f6{ z-index:0;}
+.dice_one_f6 .dot{ margin-left: 20%;}
+.dice_one_f6 :nth-child(1){ grid-area: 1/1/1}
+.dice_one_f6 :nth-child(2){ grid-area: 2/1/2}
+.dice_one_f6 :nth-child(3){ grid-area: 3/1/3}
+.dice_one_f6 :nth-child(4){ grid-area: 1/3/1}
+.dice_one_f6 :nth-child(5){ grid-area: 2/3/2}
+.dice_one_f6 :nth-child(6){ grid-area: 3/3/3}
+
+/* :::: dice number two :::: */
+
+.dice_two_f1{ z-index: 0;}
+.dice_two_f1{ justify-content: center;}
+.dice_two_f1 :nth-child(1){ grid-area: 2 / 2 / 2 /2;}
+
+.dice_two_f2{ z-index: 0;}
+.dice_two_f2 .dot{margin-left: 20%;}
+.dice_two_f2 :nth-child(1){ grid-area: 1 / 1 / 1 ;}
+.dice_two_f2 :nth-child(2){ grid-area: 3 / 3 / 3 ;}
+
+.dice_two_f3{ z-index: 0;}
+.dice_two_f3{ justify-content: center;}
+.dice_two_f3 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_two_f3 :nth-child(2){ grid-area: 2/ 2/ 3;}
+.dice_two_f3 :nth-child(3){ grid-area: 3/ 3/ 3;}
+
+.dice_two_f4{ z-index: 0;}
+.dice_two_f4 .dot{ margin: 20%;}
+.dice_two_f4 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_two_f4 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_two_f4 :nth-child(3){ grid-area: 3/ 1/ 3;}
+.dice_two_f4 :nth-child(4){ grid-area: 3/ 3/ 3;}
+
+.dice_two_f5{ z-index: 0;}
+.dice_two_f5{ justify-content: center;}
+.dice_two_f5 :nth-child(1){ grid-area: 1/ 1/ 1;}
+.dice_two_f5 :nth-child(2){ grid-area: 1/ 3/ 1;}
+.dice_two_f5 :nth-child(3){ grid-area: 2/ 2/ 2;}
+.dice_two_f5 :nth-child(4){ grid-area: 3/ 1/ 3;}
+.dice_two_f5 :nth-child(5){ grid-area: 3/ 3/ 3;}
+
+.dice_two_f6{ z-index: 0;}
+.dice_two_f6 .dot{ margin-left: 20%;}
+.dice_two_f6 :nth-child(1){ grid-area: 1/1/1}
+.dice_two_f6 :nth-child(2){ grid-area: 2/1/2}
+.dice_two_f6 :nth-child(3){ grid-area: 3/1/3}
+.dice_two_f6 :nth-child(4){ grid-area: 1/3/1}
+.dice_two_f6 :nth-child(5){ grid-area: 2/3/2}
+.dice_two_f6 :nth-child(6){ grid-area: 3/3/3}
+
+
+/* ::: media queries ::: */
+@media (max-width:920px ) {
+
+    .page_wrap{ display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;}
+
+    .header{ grid-area: 1/1/2/9;
+        margin-bottom: 10%;
+        font-size: 50%;}
+    .headlineArrow{font-size: 40%; text-align: center;}
+
+    .dice_container_One .dice_container_Two{
+       width: 6rem;}
+
+    .dice{ width: 6rem; height: 6rem;}
+    .dot{ border-radius: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0 0.25rem 0 0.25rem;}
+
+    .who_wins{ grid-area: 4/ 2/ 5/ 6;
+        margin-bottom: 10%;
+        text-align: center;
+        font-size: 2rem;}
+
+    .button{margin: 20%; border-radius: 25%}
+
+    .reset-button{ grid-area: 7/ 2/ 8/ 8; margin: 10%; 
+        font-size: 180%; min-height: 25%;}
+
+    .dice-button{ grid-area: 5/ 2/ 6/ 8;  margin: 10%;
+        font-size: 180%;}
+
+    #footer{display: none;}
+}
+
+@media (min-width:920px) {
+
+    .page_wrap{ display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;}
+
+    .header{ grid-area: 1/1/2/9;
+        margin-bottom: 10%;
+        font-size: 120%;}
+    .headlineArrow{font-size: 4rem; text-align: center;}
+   
+    .who_wins{ grid-area: 4/ 2/ 5/ 6;
+        margin-bottom: 10%;
+        text-align: center;
+        font-size: 4rem;}
+
+    .button{margin: 20%;}
+
+    .reset-button{ grid-area: 7/ 2/ 8/ 6; 
+        margin: 10%; 
+        font-size: 180%; min-height: 25%;}
+
+    .dice-button{ grid-area: 5/ 2/ 6/ 6;  
+        margin: 10%;
+        font-size: 180%;}
+   
+}
+
+@media (min-width:1200px ) {
+
+    .page_wrap{ display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;}
+
+    
+    .headlineArrow{font-size: 4rem; text-align: center;}
+
+    .button{ margin:0; border-radius: 12rem;}
+
+    .reset-button{ grid-area: 4/ 3/ 5/ 5; min-height:0; 
+        margin: 0 10% 0 10%;
+        max-height: 25%;}
+    .dice-button{ grid-area: 3/ 3/ 4/ 5; min-height:0; 
+        margin: 0 10% 0 10%;
+        max-height: 25%;}
+    
+    .who_wins{ grid-area: 2/ 3/ 3/ 5;
+    margin-top: 15%;
+    text-align: center;
+    font-size: 4rem;}
+
+    #footer{ grid-area: 7/ 1/ 8/ 7;}
+}
