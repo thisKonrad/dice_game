@@ -5,4 +5,4 @@ basic dice game with 2 dices scoring against each other..
 
 the dices are styled with css grid --check stylesheet.
 
-best regards, Konrad!
+
