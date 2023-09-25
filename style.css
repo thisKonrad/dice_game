@@ -49,15 +49,6 @@ h1{ text-align: center;
     text-align: center;
 }
   
-#footer{ 
-    grid-area: 5/ 1/ 7/ 7;
-    text-align: center;
-    font-size: 1.5rem;
-    color:white;
-    padding: 0.45rem;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
 .who_wins{ grid-area: 2/ 3/ 3/ 5;
     margin-top: 15%;
     text-align: center;
@@ -259,7 +250,6 @@ h1{ text-align: center;
     .dice-button{ grid-area: 5/ 2/ 6/ 8;  margin: 10%;
         font-size: 180%;}
 
-    #footer{display: none;}
 }
 
 @media (min-width:920px) {
@@ -313,5 +303,4 @@ h1{ text-align: center;
     text-align: center;
     font-size: 4rem;}
 
-    #footer{ grid-area: 7/ 1/ 8/ 7;}
 }
